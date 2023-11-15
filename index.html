@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Design</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg">
+
+    <h1>
+        Calculator
+    </h1>
+
+    <table> 
+        <tr>
+            <input type="text" id="input" disabled> 
+        </tr>
+        <tr> 
+            <td><input class="size" type="button" onclick="append(1)" value="1"></td> 
+            <td><input class="size" type="button" onclick="append(2)" value="2"></td> 
+            <td><input class="size" type="button" onclick="append(3)" value="3"></td> 
+            <td><input class="size" type="button" onclick="append(4)" value="4"></td>
+            <td><input class="size" type="button" onclick="append(5)" value="5"></td>  
+        </tr> 
+        <tr> 
+            <td><input class="size" type="button" onclick="append(6)" value="6"></td>  
+            <td><input class="size" type="button" onclick="append(7)" value="7"></td> 
+            <td><input class="size" type="button" onclick="append(8)" value="8"></td>  
+            <td><input class="size" type="button" onclick="append(9)" value="9"></td>
+            <td><input class="size" type="button" onclick="append(0)" value="0"></td>   
+        </tr> 
+        <tr> 
+            <td><input class="size" type="button" onclick="add()" value="+"></td>  
+            <td><input class="size" type="button" onclick="subtract()" value="-"></td>  
+            <td><input class="size" type="button" onclick="multiply()" value="*"></td>  
+            <td><input class="size" type="button" onclick="divide()" value="/"></td>
+            <td><input class="size" type="button" onclick="percentage()" value="%"></td>  
+        </tr> 
+        <tr> 
+            <td><input class="size" type="button" onclick="ClearInput()" value="C"></td>  
+            <td><input class="size" type="button" onclick="append('.')" value="."></td>  
+            <td><input class="size" type="button" onclick="calculate()" value="="></td> 
+        </tr> 
+    </table> 
+
+    <script>
+
+        let currentInput = '';
+        let currentOperator = '';
+
+        function append(number){
+            currentInput += number;
+            document.getElementById('input').value = currentInput;
+        }
+        
+        function add(){
+            currentOperator = '+'
+            currentInput += currentOperator;
+            document.getElementById('result').value = currentInput;
+        }
+
+        function subtract() {
+            currentOperator = '-';
+            currentInput += currentOperator;
+            document.getElementById('input').value = currentInput;
+        }
+
+        function multiply() {
+            currentOperator = '*';
+            currentInput += currentOperator;
+            document.getElementById('input').value = currentInput;
+        }
+
+        function divide() {
+            currentOperator = '/';
+            currentInput += currentOperator;
+            document.getElementById('input').value = currentInput;
+        }
+
+        function percentage() {
+            currentOperator = '%';
+            currentInput += currentOperator;
+            document.getElementById('input').value = currentInput;
+        }
+
+        function ClearInput() {
+            currentInput = '';
+            currentOperator = '';
+            document.getElementById('input').value = '';
+        }
+
+        function calculate() {
+            const input = eval(currentInput);
+            document.getElementById('input').value = input
+            currentInput = result.toString();
+            currentOperator = '';
+        }
+    </script>
+</body>
+</html>

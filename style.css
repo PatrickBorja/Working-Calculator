@@ -1,0 +1,45 @@
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+
+.bg {
+    background-color: gray;
+}
+
+
+table {
+    position: absolute;
+    margin-left: 26.5%;
+}
+
+.size {
+    margin: 5px 20px 0px 20px;
+    height: 100px;
+    width: 100px;
+    border-color: tomato;
+}
+
+.size:hover {
+    margin: 5px 20px 0px 20px;
+    height: 100px;
+    width: 100px;
+    border-color: black;
+    background-color: red;
+}
+
+
+#input {
+    margin-left: 25%;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 8%;
+    height: 50px;
+    width: 750px;
+}
+
+td {
+    border-color: black;
+    margin: 50px;
+}
